@@ -20,13 +20,13 @@ jobs:
          dotnet-version: '8.0.x'
 
      - name: Restore
-       uses: dotnet restore ./DeployToAzure.sln
+       run: dotnet restore ./DeployToAzure.sln
 
      - name: Build
-       uses: dotnet build ./DeployToAzure.sln --no-restore --configuration Release
+       run: dotnet build ./DeployToAzure.sln --no-restore --configuration Release
 
      - name: Test
-       uses: dotnet test ./DeployToAzure.sln --no-build --configuration Release
+       run: dotnet test ./DeployToAzure.sln --no-build --configuration Release
 
      - name: Publish
-       uses: dotnet publish ./DeployToAzure.sln --no-build --configuration Release
+       run: dotnet publish ./DeployToAzure.sln --no-build --configuration Release
