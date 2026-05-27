@@ -29,7 +29,7 @@ jobs:
        run: dotnet test ./DeployToAzure.sln --no-build --configuration Release
 
      - name: Publish
-       run: dotnet publish ./DeployToAzure.WebApi/DeployToAzure.WebApi.csproj --no-build --configuration Release --output '${{secrets.AZURE_PUBLISH_PROFILE}}'
+       run: dotnet publish ./DeployToAzure.WebApi/DeployToAzure.WebApi.csproj --no-build --configuration Release --output './publish'
        
      - name: Deployement
        uses: azure/webapps-deploy@v2
