@@ -17,6 +17,11 @@ app.MapGet("/sum", () =>
     var result = 1 + 2;
     return Results.Ok(result);
 });
+app.MapGet("", () =>
+{
+    
+    return Results.Ok("hello world");
+});
 
 
 // Configure the HTTP request pipeline.
